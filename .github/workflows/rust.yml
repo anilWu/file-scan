@@ -30,9 +30,15 @@ jobs:
     needs: build
     env:
       ANIL_ENV_job2: build2
+    outputs:
+      output1: ${{ env.ANIL_ENV_job2 }}
+      output2: ${{ steps.step2.outputs.test }}
     steps:
-    - name: test-build2 
-      run: echo  ${{ env.ANIL_ENV }}  ${{ env.ANIL_ENV_JOB2 }} 
+    - name: test-build2
+      run: echo  ${{ env.ANIL_ENV }}
+      shell: bash
+    - name: evn
+      run: echo "test=world" >> "$GITHUB_OUTPUT"
       shell: bash
 
   build3:
@@ -40,5 +46,5 @@ jobs:
     needs: [build, build2]
     steps:
     - name: test-build3 
-      run: echo  ${{ env.ANIL_ENV }}  ${{ needs.build2.env.ANIL_ENV_JOB2 }} 
+      run: echo  ${{ env.ANIL_ENV }}  ${{ needs.build2.outputs.output2 }} 
       shell: bash
