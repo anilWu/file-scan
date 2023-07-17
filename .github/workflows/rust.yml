@@ -42,6 +42,8 @@ jobs:
       shell: bash
 
   build3:
+    env:
+      ANIL_ENV2: ${{ needs.build2.outputs.output1 }}
     runs-on: ubuntu-latest
     needs: [build, build2]
     steps:
