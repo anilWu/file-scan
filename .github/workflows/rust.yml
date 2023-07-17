@@ -32,7 +32,7 @@ jobs:
       ANIL_ENV_job2: build2
     outputs:
       output1: ${{ env.ANIL_ENV_job2 }}
-      output2: ${{ steps.step2.outputs.test }}
+      output2: ${{ steps.evn.outputs.test }}
     steps:
     - name: test-build2
       run: echo  ${{ env.ANIL_ENV }}
