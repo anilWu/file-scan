@@ -8,6 +8,7 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  ANIL_ENV: anil
 
 jobs:
   build:
@@ -27,9 +28,11 @@ jobs:
   build2:
     runs-on: ubuntu-latest
     needs: build
+    env:
+      ANIL_ENV_job2: build2
     steps:
     - name: test-build2 
-      run: echo $PATH
+      run: echo  ${{ env.ANIL_ENV }}  ${{ env.ANIL_ENV_JOB2 }} 
       shell: bash
 
   build3:
@@ -37,5 +40,5 @@ jobs:
     needs: [build, build2]
     steps:
     - name: test-build3 
-      run: echo $PATH
+      run: echo  ${{ env.ANIL_ENV }}  ${{ needs.build2.env.ANIL_ENV_JOB2 }} 
       shell: bash
