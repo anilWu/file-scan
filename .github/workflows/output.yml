@@ -1,4 +1,4 @@
-name: Rust
+name: Rust-OutPut
 
 on:
   push:
@@ -11,20 +11,6 @@ env:
   ANIL_ENV: anil
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: shell test
-      run: echo $PATH
-      shell: bash
-    - uses: actions/checkout@v3
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
-
   build2:
     runs-on: ubuntu-latest
     needs: build
