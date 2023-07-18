@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: step1
-      with:
-          p1: 参数1
-          p2: 参数2
       run: echo $INPUT_P1   $INPUT_P2
       shell: bash
 
