@@ -14,8 +14,7 @@ jobs:
       with:
           p1: 参数1
           p2: 参数1
-      run: |
-        echo "build1.step1"
+      run: echo "build1.step1"
       shell: bash
 
     - name: step2
