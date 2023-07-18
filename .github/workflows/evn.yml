@@ -26,7 +26,6 @@ jobs:
       shell: bash
     - name: evn
       run: |
-         echo "test=world" >> "$GITHUB_OUTPUT"
          echo  ${{ env.ANIL_ENV }}
          echo  $ANIL_ENV_JOB
          echo  $ANIL_ENV_STEP
@@ -43,7 +42,6 @@ jobs:
         shell: bash
       - name: evn
         run: |
-          echo "test=world" >> "$GITHUB_OUTPUT"
           echo  ${{ env.ANIL_ENV }}
           echo  ${{ needs.build.env.ANIL_ENV_JOB }}
           echo  ${{ needs.build.env.ANIL_ENV_STEP }}
