@@ -15,9 +15,7 @@ jobs:
       shell: bash
 
     - name: step2
-      run: |
-        echo  ${{ jobs.build1.steps[0].name }}
-        echo ${{ jobs.build1.steps[1].name }}
+      run: echo $INPUT_P1   $INPUT_P2
       shell: bash
 
   build2:
