@@ -24,6 +24,6 @@ jobs:
       steps:
       - name: step1
         run: |
-          echo ${{ needs.build1[0].name }}  ${{ jobs.build1[0].name }}
-          echo ${{ needs.build1[1].name }}  ${{ jobs.build1[1].name }}
+          echo ${{ needs.build1.steps[0].name }}  ${{ needs.build1.steps[0].name }}
+          echo ${{ needs.build1.steps[1].name }}  ${{ needs.build1.steps[1].name }}
         shell: bash
