@@ -11,8 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: step1
+      with:
+          p1: 参数1
+          p2: 参数1
       run: |
-        echo ${{ jobs.build1.steps[0].name }}
+        echo ${{ build1.steps[0].name }}
       shell: bash
 
     - name: step2
