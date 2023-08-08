@@ -8,7 +8,7 @@ on:
 
 jobs:
   build1:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: step1
       run: echo $INPUT_P1   $INPUT_P2
@@ -19,7 +19,7 @@ jobs:
       shell: bash
 
   build2:
-      runs-on: ubuntu-latest
+      runs-on: self-hosted
       needs:  build1
       steps:
       - name: step1
