@@ -5,7 +5,10 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
+env:
+  CARGO_TERM_COLOR: always
+  ANIL_ENV: anil
+  
 jobs:
   build1:
     runs-on: self-hosted
