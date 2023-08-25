@@ -18,7 +18,7 @@ jobs:
       run: echo $INPUT_P1   $INPUT_P2
       shell: powershell
       env:
-            step1_env: 5432
+          step1_env: 5432
 
     - name: step2
       run: echo $INPUT_P1   $INPUT_P2
