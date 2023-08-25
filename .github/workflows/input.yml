@@ -20,7 +20,7 @@ jobs:
       shell: powershell
       env:
           step1_env: 5432
-      if: ${{$step1_env == 5432 }} 
+      if: ${{ env.step1_env == 5432 }} 
 
     - name: step2
       run: echo $INPUT_P1   $INPUT_P2
