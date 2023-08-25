@@ -1,5 +1,4 @@
-name: Rust-Evn
-
+name: Anil-test-pipline
 on:
   push:
     branches: [ "master" ]
@@ -13,7 +12,6 @@ on:
         required: false
         type: string
 env:
-  CARGO_TERM_COLOR: always
   ANIL_ENV: anil
   myExponentialNumber: ${{ -2.99e-2 }}
   
@@ -22,8 +20,7 @@ jobs:
     runs-on: self-hosted
     if: github.repository == 'anilWu/file-scan'
     outputs:
-      output1: echo The username is ${{ inputs.workflow_username }}
-      output2: ${{ steps.step2.outputs.test }}
+      output1: ${{ steps.step2.outputs.test }}
     steps:
     - name: step1
       run:  |
@@ -36,7 +33,7 @@ jobs:
     - name: step2
       run: echo "test=world" >> "$GITHUB_OUTPUT"
       shell: powershell
-    - name: Archive production artifacts
+    - name: artifacts
       uses: actions/upload-artifact@v3
       with:
           name: homework
@@ -50,18 +47,9 @@ jobs:
       steps:
       - name: step1
         run: |
-          echo "Anil Test"
+          echo ${{needs.build1.outputs.output1}}
         shell: powershell
-      - name: Download math result for job 1
+      - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: homework
-      - shell: powershell
-        run: |
-          cat math-homework.txt
-          echo  3+12  >> math-homework.txt
-      - name: Upload math result for job 2
-        uses: actions/upload-artifact@v3
-        with:
-          name: homework
-          path: math-homework.txt
