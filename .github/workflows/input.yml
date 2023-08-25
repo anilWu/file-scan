@@ -43,7 +43,7 @@ jobs:
           name: homework
           path: math-homework.txt
     - name: step4
-      run: sleep 1
+      run: sleep 30
 
   build2:
       runs-on: self-hosted
