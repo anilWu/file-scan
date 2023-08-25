@@ -32,10 +32,10 @@ jobs:
       if: ${{ env.step1_env == 5432 }} 
 
     - id: step2
-      run: echo "test=helo" >> $env:GITHUB_OUTPUT
+      run: echo "test=hello" >> $env:GITHUB_OUTPUT
       shell: powershell
     - id: step3
-      run: echo "test=world" >> $env:GITHUB_OUTPUT
+      run: echo "test=rust" >> $env:GITHUB_OUTPUT
       shell: powershell
     - name: artifacts
       uses: actions/upload-artifact@v3
@@ -52,7 +52,7 @@ jobs:
       - env:
           OUTPUT1: ${{needs.build1.outputs.output1}}
           OUTPUT2: ${{needs.build1.outputs.output2}}
-        run: echo $OUTPUT1 $OUTPUT2
+        run: echo $env:OUTPUT1 $env:OUTPUT2
         shell: powershell
       - name: Download artifact
         uses: actions/download-artifact@v3
