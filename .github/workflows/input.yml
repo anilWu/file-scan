@@ -56,7 +56,7 @@ jobs:
           name: homework
       - shell: powershell
         run: |
-          value=`cat math-homework.txt`
+          cat math-homework.txt
           echo  3+12  >> math-homework.txt
       - name: Upload math result for job 2
         uses: actions/upload-artifact@v3
