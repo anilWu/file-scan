@@ -27,7 +27,7 @@ jobs:
     steps:
     - name: step1
       run:  |
-          echo ${{ 3+3 }} >> math-homework.txt
+          echo  3+3  >> math-homework.txt
       shell: powershell
       env:
           step1_env: 5432
@@ -57,7 +57,7 @@ jobs:
       - shell: powershell
         run: |
           value=`cat math-homework.txt`
-          echo ${{ 3+12 }} >> math-homework.txt
+          echo  3+12  >> math-homework.txt
       - name: Upload math result for job 2
         uses: actions/upload-artifact@v3
         with:
