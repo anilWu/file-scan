@@ -30,7 +30,7 @@ jobs:
           step1_env: 5432
       if: ${{ env.step1_env == 5432 }} 
 
-    - name: step2
+    - id: step2
       run: echo "test=world" >> "$GITHUB_OUTPUT"
       shell: powershell
     - name: artifacts
