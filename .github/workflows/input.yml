@@ -37,11 +37,11 @@ jobs:
       shell: powershell
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
-          with:
-              name: dist-without-markdown
-              path: |
-               dist
-               !dist/**/*.md
+      with:
+          name: dist-without-markdown
+          path: |
+            dist
+            !dist/**/*.md
 
   build2:
       runs-on: self-hosted
