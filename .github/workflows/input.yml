@@ -22,7 +22,7 @@ jobs:
     runs-on: self-hosted
     if: github.repository == 'anilWu/file-scan'
     outputs:
-      output1: ${{ steps.step1.outputs.test }}
+      output1: echo The username is ${{ inputs.workflow_username }}
       output2: ${{ steps.step2.outputs.test }}
     steps:
     - name: step1
