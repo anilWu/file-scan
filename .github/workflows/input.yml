@@ -31,7 +31,7 @@ jobs:
       if: ${{ env.step1_env == 5432 }} 
 
     - id: step2
-      run: echo "test=world" >> $GITHUB_OUTPUT
+      run: echo "test=world" >> %GITHUB_OUTPUT%
       shell: powershell
     - name: artifacts
       uses: actions/upload-artifact@v3
@@ -39,7 +39,7 @@ jobs:
           name: homework
           path: math-homework.txt
     - name: step3
-      run: sleep 20
+      run: sleep 1
 
   build2:
       runs-on: self-hosted
