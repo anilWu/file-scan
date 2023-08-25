@@ -45,7 +45,6 @@ jobs:
       runs-on: self-hosted
       needs:  build1
       steps:
-      - name: step1
       - env:
           OUTPUT1: ${{needs.job1.outputs.output1}}
         run: echo "$OUTPUT1 
