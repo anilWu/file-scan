@@ -47,7 +47,7 @@ jobs:
       steps:
       - name: step1
         run: |
-          echo ${{needs.build1.outputs.output1}}
+          echo  ${{ needs.build1.outputs.output1 }}
         shell: powershell
       - name: Download artifact
         uses: actions/download-artifact@v3
