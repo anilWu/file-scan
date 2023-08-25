@@ -26,7 +26,7 @@ jobs:
       output2: ${{ steps.step2.outputs.test }}
     steps:
     - name: step1
-      run:  echo The username is ${{ inputs.workflow_username }}
+      run:  expr 3 + 7 > math-homework.txt
       shell: powershell
       env:
           step1_env: 5432
@@ -38,10 +38,8 @@ jobs:
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:
-          name: dist-without-markdown
-          path: |
-            dist
-            !dist/**/*.md
+          name: homework
+          path: math-homework.txt
 
   build2:
       runs-on: self-hosted
@@ -51,3 +49,16 @@ jobs:
         run: |
           echo "Anil Test"
         shell: powershell
+      - name: Download math result for job 1
+        uses: actions/download-artifact@v3
+        with:
+          name: homework
+      - shell: powershell
+        run: |
+          value=`cat math-homework.txt`
+          expr $value \* 9 > math-homework.txt
+      - name: Upload math result for job 2
+        uses: actions/upload-artifact@v3
+        with:
+          name: homework
+          path: math-homework.txt
