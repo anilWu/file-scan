@@ -13,6 +13,7 @@ env:
 jobs:
   build1:
     runs-on: self-hosted
+    if: github.repository == 'anilWu/file-scan'
     steps:
     - name: step1
       run: echo $INPUT_P1   $INPUT_P2
