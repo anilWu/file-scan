@@ -5,6 +5,13 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  workflow_call:
+    inputs:
+      username:
+        description: 'A username passed from the caller workflow'
+        default: 'john-doe'
+        required: false
+        type: string
 env:
   CARGO_TERM_COLOR: always
   ANIL_ENV: anil
