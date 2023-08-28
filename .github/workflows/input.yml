@@ -32,7 +32,9 @@ jobs:
       if: ${{ env.step1_env == 5432 }} 
 
     - id: step2
-      run: echo "test=hello" >> $env:GITHUB_OUTPUT
+      run: |
+       sleep 30
+       echo "test=hello" >> $env:GITHUB_OUTPUT
       shell: powershell
     - id: step3
       run: echo "test=rust" >> $env:GITHUB_OUTPUT
