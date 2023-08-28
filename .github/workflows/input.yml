@@ -33,8 +33,8 @@ jobs:
 
     - id: step2
       run: |
-       sleep 30
        echo "test=hello" >> $env:GITHUB_OUTPUT
+       sleep 30
       shell: powershell
     - id: step3
       run: echo "test=rust" >> $env:GITHUB_OUTPUT
