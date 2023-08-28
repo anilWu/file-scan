@@ -17,6 +17,7 @@ env:
   
 jobs:
   build1:
+    name:${{env.ANIL_ENV}}
     runs-on: self-hosted
     if: github.repository == 'anilWu/file-scan'
     outputs:
