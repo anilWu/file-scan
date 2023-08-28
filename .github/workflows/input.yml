@@ -23,7 +23,7 @@ jobs:
       output1: ${{ steps.step2.outputs.test }}
       output2: ${{ steps.step3.outputs.test }}
     steps:
-    - name: step1
+    - name: ${{env.ANIL_ENV}}
       run:  |
           echo  3+3  >> math-homework.txt
       shell: powershell
