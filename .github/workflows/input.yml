@@ -52,7 +52,7 @@ jobs:
       - env:
           OUTPUT1: ${{needs.build1.outputs.output1}}
           OUTPUT2: ${{needs.build1.outputs.output2}}
-        run: echo $env:OUTPUT1 $env:OUTPUT2
+        run: echo $env:OUTPUT1 $env:OUTPUT2  ${{needs.build1.outputs.output1}}
         shell: powershell
       - name: Download artifact
         uses: actions/download-artifact@v3
